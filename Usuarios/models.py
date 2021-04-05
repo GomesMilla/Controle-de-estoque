@@ -45,9 +45,9 @@ class Pessoa(models.Model):
     data_de_cadastro = models.DateTimeField(verbose_name = "Data do cadastro", auto_now_add= True)
 
     class Meta:
-        verbose_name = "Pessoa:"
-        verbose_name_plural = "Pessoas:"
-        db_table: "pessoa:"
+        verbose_name = "Pessoa"
+        verbose_name_plural = "Pessoas"
+        db_table: "pessoa"
 
     def __str__(self):
         return self.nome
@@ -56,28 +56,29 @@ class Gerente(models.Model):
     pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = "Gerente:"
-        verbose_name_plural = "Gerentes:"
+        verbose_name = "Gerente"
+        verbose_name_plural = "Gerentes"
         db_table = "Gerente"
     def __str__(self):
         return self.nome
 
 class Empresa(models.Model):
     nome = models.CharField(verbose_name = "Nome completo:", max_length = 194 )
+    email = models.EmailField(verbose_name = "E-mail:", unique=True, blank=False, null=False)
+    cep = models.CharField(verbose_name = "CEP:", max_length = 194)
     pais = models.CharField(verbose_name = "País", max_length= 194, blank=False, null=False)
     estado = models.CharField(verbose_name = "Estado:", max_length = 30, blank=False, null=False)
     cidade = models.CharField(verbose_name = "Cidade:", max_length = 194, blank=False, null=False)
     bairro = models.CharField(verbose_name = "Bairro:", max_length = 194, blank=False, null=False)
     logradouro = models.CharField(verbose_name = "Logradouro:", max_length = 194, blank=False, null=False)
     numero_da_casa = models.CharField(verbose_name = "Número da residencia:", max_length = 194, blank=False, null=False)
-    CNPJ = models.CharField(verbose_name = "CNPJ da empresa:", max_length = 194, unique=True, blank=False, null=False)
-    inscricao_estadual = models.CharField(verbose_name = "Inscrição estadual da empresa:", max_length = 194, unique=True, blank=False, null=False)
+    CNPJ = models.CharField(verbose_name = "CNPJ da empresa:", max_length = 194, unique=True)
     telefone = models.CharField(verbose_name = "Telefone da residencia:", max_length = 194, blank=True, null=True)
     data_de_cadastro = models.DateTimeField(verbose_name = "Data do cadastro",  auto_now_add= True)
 
     class Meta:
-        verbose_name = "Empresa:"
-        verbose_name_plural = "Empresas:"
+        verbose_name = "Empresa"
+        verbose_name_plural = "Empresas"
         db_table = "empresa"
     
     def __str__(self):
@@ -88,8 +89,8 @@ class Vendedor(models.Model):
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = "Vendedor:"
-        verbose_name_plural = "Vendedores:"
+        verbose_name = "Vendedor"
+        verbose_name_plural = "Vendedores"
         db_table = "vendedor"
 
     def __str__(self):

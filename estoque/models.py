@@ -7,7 +7,7 @@ TIPO_ALIMENTO = [
 
 class Produto(models.Model):
     categoria = models.CharField(verbose_name = "Categoria:", max_length = 30, choices =TIPO_ALIMENTO)
-    nome = models.CharField(verbose_name = "Nome do produto:", max_length = 194, blank=False, null=False)
+    nome = models.CharField(verbose_name = "Nome do produto:", max_length = 194)
     descricao = models.TextField(verbose_name = "Descrição do produto:", max_length = 194, blank=False, null=False)
 
     class Meta:
@@ -20,8 +20,8 @@ class Produto(models.Model):
 
 class ProdutoEstoque(models.Model):
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
-    quantidade = models.IntegerField(verbose_name = "Quantidade de produto:", max_length = 1000, blank=False, null=False)
-    data_de_validade = models.DateField (verbose_name = "Data de validade:", blank=False, null=False)
+    quantidade = models.IntegerField(verbose_name = "Quantidade de produto:")
+    data_de_validade = models.DateField (verbose_name = "Data de validade:")
 
     class Meta:
         verbose_name = "Estoque"
