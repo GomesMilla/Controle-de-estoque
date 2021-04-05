@@ -1,4 +1,49 @@
 {% extends 'base.html' %}
 
+{% block conteudo %}
+<script>
+    $('document').ready(function() {
+        document.getElementById("id_nascimetno").setAttribute("type", "date");
+        $("#id_nascimento").attr("type", "date");
+        // document.getElementById("id_data_inicio").setAttribute("class", "red-text");
+        // $("#id_data_termino").addClass("text-green");
+    })
+</script>
+<main class="container">
+    <h1>Cadastrar Pessoa</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label placeholder="name@examplo.com">Nome:</label> {{form.nome}}
+        </div>
+        <br>
+
+        <div>
+            <label>Email</label> {{form.email}}
+        </div>
+        <div>
+
+            <label>Data de nascimento:</label> {{form.nascimento}}
+        </div>
 
 
+        <br>
+        <div>
+            <label>CPF</label> {{form.cpf}}
+        </div>
+        <div>
+            <input class="button" type="submit" value="Continue">
+        </div>
+    </form>
+    <br>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Endereço de email</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@examplo.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Examplo area de texto</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+
+{% endblock %}

@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-color: black;
 }
 
 main {
@@ -11,6 +12,21 @@ main {
     background-color: black;
 }
 
-.page-footer{
-    background-color: aqua;
+footer{
+    background-color: rgb(4, 7, 7);
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+    color:aliceblue;
+    
+    display: flex;
+    flex-direction: column:
+    
 }
+
+.h1{
+    color: aliceblue;
+}
+
+

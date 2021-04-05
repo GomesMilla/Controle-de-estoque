@@ -2,6 +2,16 @@ from django.shortcuts import render
 from Usuarios.models import *
 from Usuarios.forms import *
 
+def home(request):
+
+    context = {
+
+        "home": home
+    }
+
+    return render (request,"index.html", context)
+
+
 def cadastrar_pessoa(request):
     
     form = PessoaForm()
@@ -21,7 +31,7 @@ def cadastrar_pessoa(request):
         "form":form
     }
 
-    return render (request,"cadastrarusuario.html", context)
+    return render(request,"cadastarusuario.html", context)
 
 def cadastrar_gerente(request):
     
