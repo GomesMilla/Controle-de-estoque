@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>VENDEDORES CADASTRADAS</h1>
+    {% if listvendedor %}
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">NOME</th>
+            <th scope="col">E-MAIL</th>
+            <th scope="col">CPF</th>
+            <th scope="col">CELULAR</th>
+            <th scope="col">CEP</th>
+            <th scope="col">NASCIMENTO</th>
+            <th scope="col">CIDADE</th>
+            <th scope="col">EMPRESA</th>
+        </tr>
+        </thead>
+        <tbody>
+         {% for aux in listvendedor %}
+        <tr>
+            <td>{{aux.pessoa.nome}}</td>
+            <td>{{aux.pessoa.email}}</td>
+            <td>{{aux.pessoa.cpf}}</td>
+            <td>{{aux.pessoa.telefone_celular}}</td>
+            <td>{{aux.pessoa.cep}}</td>
+            <td>{{aux.pessoa.nascimento}}</td>
+            <td>{{aux.pessoa.cidade}}</td>
+            <td>{{aux.empresa}}</td>
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há vendedores cadastrados 
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{% url 'cadastrar_vendedor' %}">
+            <button class="btn btn-primary" type="button">CADASTRAR VENDEDOR</button>
+        </a>
+        {% endif%} 
+</main>
+{% endblock %}

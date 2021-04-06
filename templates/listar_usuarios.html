@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>USUÁRIOS CADASTRADOS</h1>
+    {% if listPessoa %}
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">NOME</th>
+            <th scope="col">E-MAIL</th>
+            <th scope="col">CPF</th>
+            <th scope="col">CELULAR</th>
+            <th scope="col">CEP</th>
+            <th scope="col">NASCIMENTO</th>
+            <th scope="col">CIDADE</th>
+        </tr>
+        </thead>
+        <tbody>
+         {% for aux in listPessoa %}
+            <tr>
+            
+            <td>{{aux.nome}}</td>
+            <td>{{aux.email}}</td>
+            <td>{{aux.cpf}}</td>
+            <td>{{aux.telefone_celular}}</td>
+            <td>{{aux.cep}}</td>
+            <td>{{aux.nascimento}}</td>
+            <td>{{aux.cidade}}</td>
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há usuários cadastrados 
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{% url 'cadastrar_vendedor' %}">
+            <button class="btn btn-primary" type="button">CADASTRAR USUÁRIO</button>
+        </a>
+        {% endif%} 
+</main>
+{% endblock %}

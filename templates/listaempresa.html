@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>EMPRESAS CADASTRADAS</h1>
+    {% if listempresa %}
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">NOME</th>
+            <th scope="col">E-MAIL</th>
+            <th scope="col">CPNJ</th>
+            <th scope="col">TELEFONE</th>
+            <th scope="col">CEP</th>
+          </tr>
+        </thead>
+        <tbody>
+         {% for aux in listempresa %}
+            <tr>
+            
+            <td>{{aux.nome}}</td>
+            <td>{{aux.email}}</td>
+            <td>{{aux.CNPJ}}</td>
+            <td>{{aux.telefone}}</td>
+            <td>{{aux.cep}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há empresas cadastradas 
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{% url 'cadastrar_empresa' %}">
+            <button class="btn btn-primary" type="button">CADASTRAR EMPRESA</button>
+        </a>
+        {% endif%} 
+</main>
+{% endblock %}

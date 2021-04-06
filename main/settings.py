@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "Usuarios",
     "estoque",
     "transacao",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
