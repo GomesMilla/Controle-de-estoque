@@ -2,8 +2,8 @@
 {% block conteudo %}
 
 <main class="container">
-    <h1>ESTOQUE DE PRODUTOS</h1>
-    {% if listProdutoEstoque %}
+    <h1>ESTOQUE</h1>
+    {% if listProdutoEstoque%}
     <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -14,7 +14,7 @@
         <tbody>
          {% for aux in listProdutoEstoque %}
         <tr>
-            <td>{{aux.produto}}</td>
+            <td>{{aux.Produto.produto}}</td>
             <td>{{aux.quantidade}}</td>
             <td>{{aux.data_de_validade}}</td>
         </tr>

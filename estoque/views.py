@@ -28,13 +28,14 @@ def produto_estoque(request):
     form = ProdutoEstoqueForm()
 
     if request.method == "POST":
-        form = ProdutoEstoque(request.POST)
+        form = ProdutoEstoqueForm(request.POST)
+        print(form)
 
         if form.is_valid():
 
             form.save()
 
-            return redirect("cadastrar_estoque")
+            return redirect("produto_estoque")
 
     context = {
 
@@ -65,3 +66,13 @@ def produtos_cadastrados(request):
     }
 
     return render(request, "listar_produtos_cadastrados.html", context)
+
+
+# def produtos_no_estoque(request):
+
+#     allestoque = ProdutoEstoque.objects.all()
+
+#     context = {
+#         "listProdutoEstoque": allestoque,
+#     }
+#     return render(request, "produtos_estoques.html", context)

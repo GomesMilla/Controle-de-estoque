@@ -36,4 +36,6 @@ urlpatterns = [
     path('Produtos-cadastrados/', produtos_cadastrados,
          name="produtos_cadastrados",),
 
+    # path('Produtos-estoque/', produtos_no_estoque, name="produtos_no_estoque",)
+
 ]
