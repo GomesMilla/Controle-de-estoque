@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>ESTOQUE DE PRODUTOS</h1>
+    {% if listProdutoEstoque %}
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">PRODUTO</th>
+            <th scope="col">QUANTIDADE</th>
+            <th scope="col">DATA DE VALIDADE</th>
+        </thead>
+        <tbody>
+         {% for aux in listProdutoEstoque %}
+        <tr>
+            <td>{{aux.Produto.produto}}</td>
+            <td>{{aux.quantidade}}</td>
+            <td>{{aux.data_de_validade}}</td>
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há produtos no estoque 
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{% url 'cadastrar_produto' %}">
+            <button class="btn btn-primary" type="button">CADASTRAR PRODUTO</button>
+        </a>
+        {% endif%} 
+</main>
+{% endblock %}

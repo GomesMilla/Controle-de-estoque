@@ -4,7 +4,47 @@
 {% block conteudo %}
     <main class="container">
         <h1>CONTROLE DE ESTOQUE</h1>
-          
+        <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">CADASTRAR PRODUTO</h5>
+                  <p class="card-text">Cadastrar produto para que seja adicionado um tipo de alimento no controle de estoque</p>
+                  <a href="{% url 'cadastrar_produto' %}" class="btn btn-primary">CADASTRAR PRODUTO</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">RELATÓRIO DAS MOVIMENTAÇÕES</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">PRODUTOS CADASTRADOS</h5>
+                  <p class="card-text">Lista de produtos cadastrados.</p>
+                  <a href="{%url 'produtos_cadastrados' %}" class="btn btn-primary">PRODUTOS CADASTRADOS</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2>ARRRUMARRR O FOOOTER</h2>
     </main>
 
 {% endblock %}

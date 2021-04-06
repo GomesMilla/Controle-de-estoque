@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block conteudo %}
+
+
+<script>
+    $('document').ready(function() {        
+        $("#id_data_de_validade").mask(" 99/99/9999");
+    })
+</script>
+
+
+<main class="container">
+    <h1>ADICIONAR PRODUTO AO ESTOQUE</h1>
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+        </form>
+        <br>
+        <br>
+        <br>
+        <div class="alert alert-dark" role="alert">
+            Todos os produtos aqui cadastrados sera adicionado ou retirado do estoque.
+          </div>
+    <br>
+    {% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>PRODUTOS CADASTRADOS</h1>
+    {% if listProduto %}
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">TIPO</th>
+            <th scope="col">NOME</th>
+            <th scope="col">DESCRIÇÃO</th>
+        </thead>
+        <tbody>
+         {% for aux in listProduto %}
+        <tr>
+            <td>{{aux.categoria}}</td>
+            <td>{{aux.nome}}</td>
+            <td>{{aux.descricao}}</td>
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há produtos cadastrados 
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{% url 'cadastrar_produto' %}">
+            <button class="btn btn-primary" type="button">CADASTRAR PRODUTO</button>
+        </a>
+        {% endif%} 
+</main>
+{% endblock %}
