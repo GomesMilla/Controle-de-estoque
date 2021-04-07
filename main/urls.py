@@ -27,6 +27,8 @@ urlpatterns = [
 
     path('Listar-vendedor', listar_vendedor, name="listar_vendedor",),
 
+    path('Gerente-cadastrado', listar_gerente, name="listar_gerente",),
+
     path('Cadastrar-produto/', cadastrar_produto, name="cadastrar_produto",),
 
     path('Produto-estoque/', produto_estoque, name="produto_estoque",),
@@ -36,6 +38,6 @@ urlpatterns = [
     path('Produtos-cadastrados/', produtos_cadastrados,
          name="produtos_cadastrados",),
 
-    # path('Produtos-estoque/', produtos_no_estoque, name="produtos_no_estoque",)
+    path('Transacao/', realizar_transacao, name="realizar_transacao",),
 
 ]

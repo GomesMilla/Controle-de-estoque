@@ -128,3 +128,13 @@ def listar_vendedor(request):
     }
 
     return render(request, "listavendedores.html", context)
+
+
+def listar_gerente(request):
+    allgerente = Gerente.objects.all()
+
+    context = {
+        "listgerente": allgerente,
+    }
+
+    return render(request, "listagerente.html", context)

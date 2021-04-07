@@ -68,11 +68,11 @@ def produtos_cadastrados(request):
     return render(request, "listar_produtos_cadastrados.html", context)
 
 
-# def produtos_no_estoque(request):
+# def produtos_vencidos(request):
 
-#     allestoque = ProdutoEstoque.objects.all()
+#     allvencidos = ProdutoEstoque.objects.all(filtrar por data de vencimento proximo e ataul)
 
 #     context = {
-#         "listProdutoEstoque": allestoque,
+#         "listProdutoEstoque": allvencidos,
 #     }
 #     return render(request, "produtos_estoques.html", context)

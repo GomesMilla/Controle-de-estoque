@@ -34,14 +34,15 @@
                   <li><a class="dropdown-item" href="{% url 'cadastrar_empresa' %}">Cadastar Empresa</a></li>
                   <li><a class="dropdown-item" href="{% url 'cadastrar_vendedor' %}">Cadastar Vendedor</a></li>
                   <li><a class="dropdown-item" href="{% url 'cadastrar_gerente' %}">Cadastrar Gerente</a></li>
-                  <li><a class="dropdown-item" href="{% url 'cadastrar_gerente' %}">Gerentes cadastrados</a></li>
+                  <li><a class="dropdown-item" href="{%url 'cadastrar_produto' %}">Cadastar Produto</a></li>
+                  <li><a class="dropdown-item" href="{% url 'listar_gerente' %}">Gerentes cadastrados</a></li>
                   <li><a class="dropdown-item" href="{% url 'listar_pessoas' %}">Usuários cadastrados</a></li>
                   <li><a class="dropdown-item" href="{% url 'listar_vendedor' %}">Vendedores cadastrados</a></li>
                   <li><a class="dropdown-item" href="{% url 'listar_empresas' %}">Empresas cadastradas</a></li>
-                  <li><a class="dropdown-item" href="{%url 'cadastrar_produto' %}">Cadastar Produto</a></li>
+                  <li><a class="dropdown-item" href="{%url 'produtos_cadastrados' %}">Produtos Cadastrados</a></li>
                   <li><a class="dropdown-item" href="{%url 'produto_estoque' %}">Adicionar produto no estoque</a></li>
                   <li><a class="dropdown-item" href="{%url 'listar_produto' %}">Estoque</a></li>
-                  <li><a class="dropdown-item" href="{%url 'produtos_cadastrados' %}">Produtos Cadastrados</a></li>
+                  <li><a class="dropdown-item" href="{%url 'realizar_transacao' %}">Compra e venda de produto</a></li>
 
 
 
@@ -62,22 +63,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-2">
-              <img src="../static/imagens/spotify.svg" width="142">
+              <p>© Copyright 2021</p> 
             </div>
-            <div class="col-md-2">
-              <h4>company</h4>
-              <ul class="navbar-nav">
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Empregos</a></li>
-                <li><a href="">Imprensa</a></li>
-                <li><a href="">Novidades</a></li>
-              </ul>
-            </div>
-            
-            
-         
-        
-      </footer>
+          </div>
+        </footer>
 
 
 </body>
