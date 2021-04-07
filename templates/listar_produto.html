@@ -4,20 +4,28 @@
 <main class="container">
     <h1>ESTOQUE DE PRODUTOS</h1>
     {% if listProdutoEstoque %}
-    <table class="table table-dark table-striped">
+    <table class="table table-dark">
         <thead>
           <tr>
             <th scope="col">PRODUTO</th>
             <th scope="col">QUANTIDADE</th>
             <th scope="col">DATA DE VALIDADE</th>
+            <th scope="col">DIAS RESTANTE VENCIMENTO</th>
         </thead>
         <tbody>
          {% for aux in listProdutoEstoque %}
-        <tr>
-            <td>{{aux.produto}}</td>
-            <td>{{aux.quantidade}}</td>
-            <td>{{aux.data_de_validade}}</td>
-        </tr>
+          {% if aux.DiasVenc == 0 %}
+            <tr class="table-danger">
+          {% elif aux.DiasVenc < 5 %}
+            <tr class="table-warning">
+          {% else %}
+            <tr class="table-success">
+          {% endif %}
+            <td>{{aux.Produto.produto.nome}}</td>
+            <td>{{aux.Produto.quantidade}}</td>
+            <td>{{aux.Produto.data_de_validade}}</td>
+            <td>{{aux.DiasVenc}}</td>
+          </tr>
           {% endfor %}
         </tbody>
       </table>

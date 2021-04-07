@@ -26,7 +26,7 @@ class Transacao(models.Model):
 
 
 class ProdutosTransacao(models.Model):
-    transação = models.ForeignKey(Transacao, on_delete=models.CASCADE)
+    transacao = models.ForeignKey(Transacao, on_delete=models.CASCADE)
     produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
     qtd_de_produtos = models.FloatField(verbose_name="Quantidade de produto:")
 

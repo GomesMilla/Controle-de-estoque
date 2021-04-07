@@ -48,11 +48,22 @@ def produto_estoque(request):
 
 
 def listar_produto(request):
-
+    today = datetime.date.today()
     allproduto = ProdutoEstoque.objects.all()
-
+    listProdutoEstoque = []
+    for q in allproduto:
+        if q.data_de_validade >= today:
+            diasVenc = q.data_de_validade - today
+            diasVenc = diasVenc.days
+        else:
+            diasVenc = 0
+        obj = {
+            'Produto': q,
+            "DiasVenc": diasVenc,
+        }
+        listProdutoEstoque.append(obj)
     context = {
-        "listProdutoEstoque": allproduto,
+        "listProdutoEstoque": listProdutoEstoque,
     }
 
     return render(request, "listar_produto.html", context)

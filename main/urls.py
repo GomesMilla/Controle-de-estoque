@@ -40,7 +40,6 @@ urlpatterns = [
 
     path('Transacao/', realizar_transacao, name="realizar_transacao",),
 
-    path('Cadastro-transacao/', cadastro_transicao, name="cadastro_transicao",),
 
     path('Produtos-vencidos/', produtos_vencidos, name="produtos_vencidos",),
 
