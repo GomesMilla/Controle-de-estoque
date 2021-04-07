@@ -12,12 +12,14 @@
           <tr>
             <th scope="col">PRODUTO</th>
             <th scope="col">DATA DE VALIDADE</th>
+            <th scope="col">DESCRIÇÃO</th>
         </thead>
         <tbody>
          {% for aux in listProdutoEstoque %}
         <tr>
             <td>{{aux.produto}}</td>
             <td>{{aux.data_de_validade}}</td>
+            <td>{{aux.produto.descricao}}</td>
         </tr>
           {% endfor %}
         </tbody>
