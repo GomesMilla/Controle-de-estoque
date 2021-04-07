@@ -12,43 +12,7 @@ def realizar_transacao(request):
         form = TransacaoForm(request.POST)
 
         if form.is_valid():
-            transacao.save()
-            listProdutosTransacao = request.POST.getlist("Produto[]", None)
-            listQtdMovi = request.POST.getlist("Qtd[]", None)
-
-            for index, q in enumerate(listProdutosTransacao):
-
-                objProdutoEstoque = ProdutoEstoque.objects.get(
-                    pk=listProdutosTransacao[index])
-
-                objProdutoMovi = ProdutosTransacao()
-                objProdutoMovi.transacao = transacao
-                objProdutoMovi.produto = objProdutoEstoque.produto
-                objProdutoMovi.quantidade = listQtdMovi[index]
-                objProdutoMovi.save()
-
-                if Transacao.tipo_de_transacao == "ENTRADA":
-                    objProdutoEstoque.qtd_de_produtos += float(
-                        objProdutosTransacao.qtd_de_produtos)
-                else:
-                    objProdutoEstoque.qtd_de_produtos -= float(
-                        objProdutoMovi.qtd_de_produtos)
-
-                objProdutosEstoque.save()
-
             return redirect("index")
-
-    context = {
-        "nome_pagina": "Movimentação",
-        "form": form,
-        "listProdutos": listProdutos,
-    }
-
-    return render(request, "movimentacao.html", context)
-
-    form.save()
-
-    return redirect("realizar_transacao")
 
     context = {
 
@@ -57,3 +21,44 @@ def realizar_transacao(request):
     }
 
     return render(request, "transacao.html", context)
+    #         transacao.save()
+    #         listProdutosTransacao = request.POST.getlist("Produto[]", None)
+    #         listQtdMovi = request.POST.getlist("Qtd[]", None)
+
+    #         for index, q in enumerate(listProdutosTransacao):
+
+    #             objProdutoEstoque = ProdutoEstoque.objects.get(
+    #                 pk=listProdutosTransacao[index])
+
+    #             objProdutoMovi = ProdutosTransacao()
+    #             objProdutoMovi.transacao = transacao
+    #             objProdutoMovi.produto = objProdutoEstoque.produto
+    #             objProdutoMovi.quantidade = listQtdMovi[index]
+    #             objProdutoMovi.save()
+
+    #             if Transacao.tipo_de_transacao == "ENTRADA":
+    #                 objProdutoEstoque.qtd_de_produtos += float(
+    #                     objProdutosTransacao.qtd_de_produtos)
+    #             else:
+    #                 objProdutoEstoque.qtd_de_produtos -= float(
+    #                     objProdutoMovi.qtd_de_produtos)
+
+    #             objProdutosEstoque.save()
+
+    #         return redirect("index")
+
+    # context = {
+    #     "nome_pagina": "Movimentação",
+    #     "form": form,
+    #     "listProdutos": listProdutos,
+    # }
+
+
+def cadastro_transicao(request):
+
+    context = {
+
+        "cadastro_transicao": cadastro_transicao,
+    }
+
+    return render(request, "index.html", context)

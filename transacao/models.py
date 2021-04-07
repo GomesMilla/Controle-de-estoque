@@ -36,4 +36,4 @@ class ProdutosTransacao(models.Model):
         db_table = "produtostransacao"
 
     def __str__(self):
-        return self.produto
+        return self.produto.nome

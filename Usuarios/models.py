@@ -36,7 +36,7 @@ class Pessoa(models.Model):
                               unique=True, blank=False, null=False)
     telefone_celular = models.CharField(
         verbose_name="Número de telefone", max_length=19, unique=False, blank=False, null=False)
-    cpf = models.CharField(verbose_name="CPF:", max_length=11,
+    cpf = models.CharField(verbose_name="CPF:", max_length=14,
                            unique=True, blank=False, null=False)
     nascimento = models.DateField(
         verbose_name="Data de nascimento:", max_length=10)
@@ -51,7 +51,7 @@ class Pessoa(models.Model):
     bairro = models.CharField(verbose_name="Bairro:",
                               max_length=194, blank=False, null=False)
     logradouro = models.CharField(
-        verbose_name="Logradouro::", max_length=194, blank=False, null=False)
+        verbose_name="Logradouro:", max_length=194, blank=False, null=False)
     numero = models.CharField(
         verbose_name="Número da residencia:", max_length=194, blank=False, null=False)
     telefone = models.CharField(

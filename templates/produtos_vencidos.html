@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>PRODUTOS VENCIDOS</h1>
+    <div class="alert alert-danger" role="alert">
+        Todos os produtos aqui listados estão vencidos ou perto de vencer!
+      </div>
+    {% if listProdutoEstoque %}
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">PRODUTO</th>
+            <th scope="col">DATA DE VALIDADE</th>
+        </thead>
+        <tbody>
+         {% for aux in listProdutoEstoque %}
+        <tr>
+            <td>{{aux.produto}}</td>
+            <td>{{aux.data_de_validade}}</td>
+        </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há produtos no estoque 
+      </div>
+      <div class="d-grid gap-2">
+        <a href="{% url 'cadastrar_produto' %}">
+            <button class="btn btn-primary" type="button">CADASTRAR PRODUTO</button>
+        </a>
+        {% endif%} 
+        <div>
+          <a href="{%url 'realizar_transacao' %}" class="btn btn-primary">Comprar ou vender produto</a>
+      </div>
+</main>
+{% endblock %}

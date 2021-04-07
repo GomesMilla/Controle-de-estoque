@@ -14,6 +14,7 @@
     <script src="{% static 'jquery.mask.js' %}"></script>
     <title>Controle de estoque</title>
 </head>
+
 <body>
     
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -43,8 +44,8 @@
                   <li><a class="dropdown-item" href="{%url 'produto_estoque' %}">Adicionar produto no estoque</a></li>
                   <li><a class="dropdown-item" href="{%url 'listar_produto' %}">Estoque</a></li>
                   <li><a class="dropdown-item" href="{%url 'realizar_transacao' %}">Compra e venda de produto</a></li>
-
-
+                  <li><a class="dropdown-item" href="{%url 'cadastro_transicao' %}">Cadastro e transição</a></li>
+                  <li><a class="dropdown-item" href="{%url 'produtos_vencidos' %}">Produtos vencidos</a></li>
 
                 </ul>
               </li>
@@ -52,13 +53,13 @@
           </div>
         </div>
       </nav>
-
+ <!-- TODO O CONTEÚDO DE UM TEMPLATE DEVE SER EXIBIDO DENTRO DESSE BLOCK CONTEÚDO E O FINAL DELE. -->
       <main>
           {% block conteudo %}
           {% endblock conteudo %}
       </main>
 
-      
+ <!-- FINAL DO TEMPLATE, É AQUI QUE FINALIZA A PARTE DO TEMPLATE QUE CRIEI, COLOCANDO ENTRE ELES O CÓDIGO DESCRITO  -->
       <footer>
         <div class="container">
           <div class="row">
@@ -67,7 +68,5 @@
             </div>
           </div>
         </footer>
-
-
 </body>
 </html>

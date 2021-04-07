@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from estoque.models import *
 from estoque.forms import *
+import datetime
 
 
 def cadastrar_produto(request):
@@ -68,11 +69,12 @@ def produtos_cadastrados(request):
     return render(request, "listar_produtos_cadastrados.html", context)
 
 
-# def produtos_vencidos(request):
+def produtos_vencidos(request):
+    today = datetime.date.today()
 
-#     allvencidos = ProdutoEstoque.objects.all(filtrar por data de vencimento proximo e ataul)
+    allvencidos = ProdutoEstoque.objects.filter(data_de_validade__lte=today)
 
-#     context = {
-#         "listProdutoEstoque": allvencidos,
-#     }
-#     return render(request, "produtos_estoques.html", context)
+    context = {
+        "listProdutoEstoque": allvencidos,
+    }
+    return render(request, "produtos_vencidos.html", context)
