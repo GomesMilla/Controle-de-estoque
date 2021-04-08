@@ -151,7 +151,7 @@ class Empresa(models.Model):
     logradouro = models.CharField(
         verbose_name="Logradouro:", max_length=194, blank=False, null=False)
     numero_da_casa = models.CharField(
-        verbose_name="Número da residencia ou compleme:", max_length=194, blank=False, null=False)
+        verbose_name="Número da residencia ou complemento:", max_length=194, blank=False, null=False)
     cnpj = models.CharField(
         verbose_name="CNPJ da empresa:", max_length=194, unique=True)
     telefone = models.CharField(
