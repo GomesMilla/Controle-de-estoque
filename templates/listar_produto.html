@@ -2,7 +2,7 @@
 {% block conteudo %}
 
 <main class="container">
-    <h1>ESTOQUE DE PRODUTOS</h1>
+    <h1>ESTOQUE</h1>
     <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
       <div class="card-header">AVISO</div>
       <div class="card-body">
@@ -49,9 +49,10 @@
         {% endif%} 
         <br>
         <br>
-        <div>
-          <a href="{%url 'realizar_transacao' %}" class="btn btn-primary">Comprar ou vender produto</a>
-      </div>
+       <div>
+          <a href="{%url 'compra_de_produtos' %}" class="btn btn-primary">Comprar produto</a>
+          <a href="{%url 'venda_de_produtos' %}" class="btn btn-primary">Vender produto</a>
+        </div>
 </main>
 <br>
 <br>

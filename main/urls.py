@@ -6,12 +6,17 @@ from transacao.models import *
 from transacao.views import *
 from estoque.models import *
 from estoque.views import *
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', home, name="home",),
+
+    path("logout/", auth_views.LogoutView.as_view(template_name="logout.html"), name="logout"),
+
+    path("login/", auth_views.LoginView.as_view(template_name="login.html"), name="login"),
 
     path('cadastrar_pessoa', cadastrar_pessoa, name="cadastrar_pessoa"),
 
@@ -37,8 +42,6 @@ urlpatterns = [
 
     path('Produtos-cadastrados/', produtos_cadastrados,
          name="produtos_cadastrados",),
-
-    path('Transacao/', realizar_transacao, name="realizar_transacao",),
 
     path('Compra-produtos/', compra_de_produtos, name="compra_de_produtos",),
 

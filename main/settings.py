@@ -82,6 +82,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+AUTH_USER_MODEL = "Usuarios.Pessoa"
 
 
 # Password validation
@@ -124,3 +125,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+LOGIN_URL = "login"
+LOGIN_REDIRECT_URL = "index"

@@ -23,13 +23,17 @@
             <select class="form-control" name="Produto[]" aria-label="Default select example">
               <option selected>Selecione o produto</option>
               {% for x in listProdutos %}
-                <option value="{{x.id}}">{{x.produto.nome}} -Quantidade {{x.quantidade}}</option>
+                <option value="{{x.id}}">{{x.nome}}</option>
               {% endfor %}
             </select>
             <br>
           <div class="input-group input-group-sm mb-3">
             <span class="input-group-text" id="inputGroup-sizing-sm">Quantidade</span>
             <input type="text" class="form-control" name = "Qtd[]" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+          </div>
+          <div class="input-group input-group-sm mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Data de validade</span>
+            <input type="date" class="form-control" name = "datavalidade[]">
           </div>
         </div>
       </div>
@@ -44,5 +48,5 @@
         {% endbuttons %}
         </form>
     <br>
-    <p>AARRRRRRRRUUUUUUUUMMMMMMMMMMMMMAAAAAAAAAAARRRRRR</p>
+   
     {% endblock %}

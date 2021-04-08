@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from Usuarios.models import *
 from Usuarios.forms import *
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def home(request):
 
     context = {
 
-        "home": home
+        "home": home,
     }
 
     return render(request, "index.html", context)
@@ -35,6 +37,7 @@ def cadastrar_pessoa(request):
     return render(request, "cadastarusuario.html", context)
 
 
+@login_required
 def cadastrar_gerente(request):
 
     form = GerenteForm()
@@ -57,6 +60,7 @@ def cadastrar_gerente(request):
     return render(request, "cadastrargerente.html", context)
 
 
+@login_required
 def cadastrar_empresa(request):
 
     form = EmpresaForm()
@@ -79,6 +83,7 @@ def cadastrar_empresa(request):
     return render(request, "cadastrarempresa.html", context)
 
 
+@login_required
 def cadastrar_vendedor(request):
 
     form = VendedorForm()
@@ -100,6 +105,7 @@ def cadastrar_vendedor(request):
     return render(request, "cadastrarvendedor.html", context)
 
 
+@login_required
 def listar_pessoas(request):
     allpessoas = Pessoa.objects.all()
 
@@ -110,6 +116,7 @@ def listar_pessoas(request):
     return render(request, "listar_usuarios.html", context)
 
 
+@login_required
 def listar_empresas(request):
     allempresa = Empresa.objects.all()
 
@@ -120,6 +127,7 @@ def listar_empresas(request):
     return render(request, "listaempresa.html", context)
 
 
+@login_required
 def listar_vendedor(request):
     allvendedor = Vendedor.objects.all()
 
@@ -130,6 +138,7 @@ def listar_vendedor(request):
     return render(request, "listavendedores.html", context)
 
 
+@login_required
 def listar_gerente(request):
     allgerente = Gerente.objects.all()
 

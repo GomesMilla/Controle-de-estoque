@@ -1,3 +1,4 @@
+from django.contrib.auth.models import BaseUserManager, AbstractBaseUser, PermissionsMixin
 from django.db import models
 
 STATUS_GENERO = [
@@ -21,7 +22,42 @@ ESCOLARIDADE = [
 ]
 
 
-class Pessoa(models.Model):
+class UsuarioManager(BaseUserManager):
+
+    def create_user(self, email, password=None):
+        usuario = self.model(
+            email=self.normalize_email(email),
+        )
+
+        usuario.is_active = True
+        usuario.is_staff = False
+        usuario.is_superuser = False
+
+        if password:
+            usuario.set_password(password)
+
+        usuario.save()
+
+        return usuario
+
+    def create_superuser(self, email, password):
+        usuario = self.create_user(
+            email=self.normalize_email(email),
+            password=password,
+        )
+
+        usuario.is_active = True
+        usuario.is_staff = True
+        usuario.is_superuser = True
+
+        usuario.set_password(password)
+
+        usuario.save()
+
+        return usuario
+
+
+class Pessoa(AbstractBaseUser, PermissionsMixin):
 
     nome = models.CharField(verbose_name="Nome completo:", max_length=194)
     naturalidade = models.CharField(
@@ -39,7 +75,7 @@ class Pessoa(models.Model):
     cpf = models.CharField(verbose_name="CPF:", max_length=14,
                            unique=True, blank=False, null=False)
     nascimento = models.DateField(
-        verbose_name="Data de nascimento:", max_length=10)
+        verbose_name="Data de nascimento:", max_length=10, null=True, auto_now_add=False, auto_now=False)
     estado_civil = models.CharField(
         verbose_name="Estado civil:", max_length=40, choices=ESTADO_CIVIL)
     profissao = models.CharField(verbose_name="Profissão:", max_length=194)
@@ -58,6 +94,25 @@ class Pessoa(models.Model):
         verbose_name="Telefone da residencia:", max_length=194, blank=True, null=True)
     data_de_cadastro = models.DateTimeField(
         verbose_name="Data do cadastro", auto_now_add=True)
+
+    is_active = models.BooleanField(
+        verbose_name="Usuário está ativo",
+        default=True,
+    )
+
+    is_staff = models.BooleanField(
+        verbose_name="Usuário é da equipe de desenvolvimento",
+        default=False,
+    )
+
+    is_superuser = models.BooleanField(
+        verbose_name="Usuário é um superusuário",
+        default=False,
+    )
+
+    USERNAME_FIELD = "email"
+
+    objects = UsuarioManager()
 
     class Meta:
         verbose_name = "Pessoa"
@@ -97,12 +152,12 @@ class Empresa(models.Model):
         verbose_name="Logradouro:", max_length=194, blank=False, null=False)
     numero_da_casa = models.CharField(
         verbose_name="Número da residencia ou compleme:", max_length=194, blank=False, null=False)
-    CNPJ = models.CharField(
+    cnpj = models.CharField(
         verbose_name="CNPJ da empresa:", max_length=194, unique=True)
     telefone = models.CharField(
         verbose_name="Contato da empresa:", max_length=194, blank=True, null=True)
     data_de_cadastro = models.DateTimeField(
-        verbose_name="Data do cadastro",  auto_now_add=True)
+        verbose_name="Data do cadastro",  auto_now_add=True, null=False)
 
     class Meta:
         verbose_name = "Empresa"

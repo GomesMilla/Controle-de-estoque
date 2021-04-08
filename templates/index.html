@@ -37,9 +37,29 @@
             <div class="col-sm-6">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">MOVIMENTAR PRODUTOS</h5>
-                  <p class="card-text">Venda e compra de produtos.</p>
-                  <a href="{%url 'realizar_transacao' %}" class="btn btn-primary">COMPRAR OU VENDER PRODUTOS</a>
+                  <h5 class="card-title">COMPRAR PRODUTOS</h5>
+                  <p class="card-text">Compra de produtos.</p>
+                  <a href="{%url 'compra_de_produtos' %}" class="btn btn-primary">COMPRAR PRODUTOS</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">ESTOQUE</h5>
+                  <p class="card-text">Todos os produtos que estão no estoque validando data de vencimento, quantidade e nome do produto.</p>
+                  <a href="{%url 'listar_produto' %}" class="btn btn-primary">Estoque</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">VENDER PRODUTO</h5>
+                  <p class="card-text">Venda de produtos, tirando do estoque o valor necessário.</p>
+                  <a href="{%url 'venda_de_produtos' %}" class="btn btn-primary">Vender produto</a>
                 </div>
               </div>
             </div>
