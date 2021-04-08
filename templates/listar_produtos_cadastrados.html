@@ -4,7 +4,7 @@
 <main class="container">
     <h1>PRODUTOS CADASTRADOS</h1>
     {% if listProduto %}
-    <table class="table table-dark table-striped">
+    <table class="table table-dark">
         <thead>
           <tr>
             <th scope="col">TIPO</th>
@@ -13,7 +13,11 @@
         </thead>
         <tbody>
          {% for aux in listProduto %}
-        <tr>
+            {% if aux.categoria == 'PERECIVEL' %}
+               <tr class="table-warning">
+            {% else %}
+                <tr class="table-success">
+            {% endif %}
             <td>{{aux.categoria}}</td>
             <td>{{aux.nome}}</td>
             <td>{{aux.descricao}}</td>

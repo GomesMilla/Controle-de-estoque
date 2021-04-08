@@ -78,14 +78,3 @@ def produtos_cadastrados(request):
     }
 
     return render(request, "listar_produtos_cadastrados.html", context)
-
-
-def produtos_vencidos(request):
-    today = datetime.date.today()
-
-    allvencidos = ProdutoEstoque.objects.filter(data_de_validade__lte=today)
-
-    context = {
-        "listProdutoEstoque": allvencidos,
-    }
-    return render(request, "produtos_vencidos.html", context)

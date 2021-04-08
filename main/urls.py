@@ -40,7 +40,9 @@ urlpatterns = [
 
     path('Transacao/', realizar_transacao, name="realizar_transacao",),
 
+    path('Compra-produtos/', compra_de_produtos, name="compra_de_produtos",),
 
-    path('Produtos-vencidos/', produtos_vencidos, name="produtos_vencidos",),
+    path('Venda-de-produtos/', venda_de_produtos, name="venda_de_produtos",),
+
 
 ]
