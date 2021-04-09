@@ -91,3 +91,14 @@ def venda_de_produtos(request):
     }
 
     return render(request, "vender.html", context)
+
+
+def relatorio_movimentacoes(request):
+
+    allmovimentacoes = Transacao,
+
+    context = {
+        "allmovimetacoes": allmovimentacoes
+    }
+
+    return render(request, "listar_movimentacoes.html", context)

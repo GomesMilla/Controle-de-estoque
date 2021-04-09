@@ -84,7 +84,3 @@ def produtos_cadastrados(request):
     }
 
     return render(request, "listar_produtos_cadastrados.html", context)
-
-
-def relatorio_movimentacao(request):
-    allmovimentacao = ProdutosTransacao.objects.all()

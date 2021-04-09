@@ -47,5 +47,8 @@ urlpatterns = [
 
     path('Venda-de-produtos/', venda_de_produtos, name="venda_de_produtos",),
 
+    path('Relatório-movimentações/', relatorio_movimentacoes,
+         name="relatorio_movimentacoes",),
+
 
 ]

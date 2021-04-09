@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+
+<main class="container">
+    <h1>RELATÓRIO DAS MOVIMENTAÇÕES</h1>
+    {% if allmovimentacoes %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">TIPO</th>
+            <th scope="col">VENDEDOR</th>
+            <th scope="col">EMPRESA</th>
+            <th scope="col">DATA</th>
+            <th scope="col">PRODUTO</th>
+            <th scope="col">QUANTIDADE</th>
+        </tr>
+        </thead>
+        <tbody>
+         {% for aux in allmovimentacoes %}
+            <tr>
+            <td>{{aux.transacao}}</td>
+            <td>{{aux.vendedor.nome}}</td>
+            <td>{{aux.empresa.nome}}</td>
+            <td>{{aux.data_de_validade}}</td>
+            <td>{{aux.produto.nome}}</td>
+            <td>{{aux.qtd_de_produtos}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+     {% else %}
+     <div class="alert alert-info" role="alert">
+        Não há movimentações realizadas 
+      </div>
+      <div class="d-grid gap-2">
+        <div>
+            <a href="{%url 'compra_de_produtos' %}" class="btn btn-primary">Comprar produto</a>
+            <a href="{%url 'venda_de_produtos' %}" class="btn btn-primary">Vender produto</a>
+            <a href="{%url 'home'  %}" class="btn btn-primary">Ínicio</a>
+        </div>
+        </a>
+    </div>
+        {% endif%} 
+</main>
+{% endblock %}
