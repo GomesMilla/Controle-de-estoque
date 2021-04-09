@@ -95,10 +95,21 @@ def venda_de_produtos(request):
 
 def relatorio_movimentacoes(request):
 
-    allmovimentacoes = Transacao,
+    listmovimentacoes = Transacao.objects.all()
+    listrelatorio = []
+
+    for aux in listmovimentacoes:
+        listProdutosTransacao = ProdutosTransacao.objects.filter(
+            transacao=aux)
+        obj = {
+            "movimentacao": aux,
+            "listproduto": listProdutosTransacao
+        }
+        listrelatorio.append(obj)
 
     context = {
-        "allmovimetacoes": allmovimentacoes
+
+        "listrelatorio": listrelatorio,
     }
 
     return render(request, "listar_movimentacoes.html", context)

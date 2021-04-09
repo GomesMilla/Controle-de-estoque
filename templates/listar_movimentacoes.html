@@ -3,7 +3,7 @@
 
 <main class="container">
     <h1>RELATÓRIO DAS MOVIMENTAÇÕES</h1>
-    {% if allmovimentacoes %}
+    {% if listrelatorio %}
     <table class="table table-striped">
         <thead>
         <tr>
@@ -16,11 +16,11 @@
         </tr>
         </thead>
         <tbody>
-         {% for aux in allmovimentacoes %}
+         {% for aux in listrelatorio %}
             <tr>
             <td>{{aux.transacao}}</td>
-            <td>{{aux.vendedor.nome}}</td>
-            <td>{{aux.empresa.nome}}</td>
+            <td>{{aux.vendedor}}</td>
+            <td>{{aux.empresa}}</td>
             <td>{{aux.data_de_validade}}</td>
             <td>{{aux.produto.nome}}</td>
             <td>{{aux.qtd_de_produtos}}</td>
