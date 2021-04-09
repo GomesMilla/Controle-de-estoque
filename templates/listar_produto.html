@@ -4,12 +4,14 @@
 <main class="container">
  
     <h1>ESTOQUE</h1>
-
+  <form method="POST">
+    {% csrf_token %}
     <div class="input-group">
-      <input type="search" class="form-control rounded" placeholder="pesquisar" aria-label="Search"
+      <input type="search" name ="pesquisa"class="form-control rounded" id ="text" placeholder="pesquisar" aria-label="Search"
         aria-describedby="search-addon"/>
-      <button type="button" class="btn btn-outline-primary">Pesquisar</button>
+      <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
     </div>
+  </form>
     <br>
     <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
       <div class="card-header">AVISO</div>
@@ -44,6 +46,9 @@
             <td>{{aux.DiasVenc}}</td>
           </tr>
           {% endfor %}
+
+         
+        
         </tbody>
       </table>
      {% else %}

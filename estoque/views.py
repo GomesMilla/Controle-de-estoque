@@ -48,8 +48,14 @@ def produto_estoque(request):
 
 
 def listar_produto(request):
-    today = datetime.date.today()
     allproduto = ProdutoEstoque.objects.all()
+    if request.POST:
+        pesquisa = request.POST.get("pesquisa", None)
+        allproduto = ProdutoEstoque.objects.filter(
+            produto__nome__contains=pesquisa)
+
+    today = datetime.date.today()
+
     listProdutoEstoque = []
     for q in allproduto:
         if q.data_de_validade >= today:
@@ -78,3 +84,7 @@ def produtos_cadastrados(request):
     }
 
     return render(request, "listar_produtos_cadastrados.html", context)
+
+
+def relatorio_movimentacao(request):
+    allmovimentacao = ProdutosTransacao.objects.all()
