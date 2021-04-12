@@ -103,7 +103,7 @@ def relatorio_movimentacoes(request):
             transacao=aux)
         obj = {
             "movimentacao": aux,
-            "listproduto": listProdutosTransacao
+            "Produtos": listProdutosTransacao
         }
         listrelatorio.append(obj)
 

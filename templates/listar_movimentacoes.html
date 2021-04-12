@@ -10,20 +10,31 @@
             <th scope="col">TIPO</th>
             <th scope="col">VENDEDOR</th>
             <th scope="col">EMPRESA</th>
-            <th scope="col">DATA</th>
             <th scope="col">PRODUTO</th>
+            <th scope="col">DESCRIÇÃO</th>
             <th scope="col">QUANTIDADE</th>
         </tr>
         </thead>
         <tbody>
          {% for aux in listrelatorio %}
             <tr>
-            <td>{{aux.transacao}}</td>
-            <td>{{aux.vendedor}}</td>
-            <td>{{aux.empresa}}</td>
-            <td>{{aux.data_de_validade}}</td>
-            <td>{{aux.produto.nome}}</td>
-            <td>{{aux.qtd_de_produtos}}</td>
+            <td>{{aux.movimentacao}}</td>
+            <td>{{aux.movimentacao.vendedor.pessoa}}</td>
+            <td>{{aux.movimentacao.empresa}}</td>
+           
+            <table>
+              <thead>
+                  <tr>
+                      <th>Nome</th>
+                      <th>Descrição</th>
+                      <th>Quantidade</th>
+                  </tr>
+              </thead>
+            {% for x in aux.Produtos %}
+            <td>{{x.produto.nome}}</td>
+            <td>{{x.descricao}}</td>
+            <td>{{x.quantidade}}</td>
+            {% endfor %}
           </tr>
           {% endfor %}
         </tbody>
