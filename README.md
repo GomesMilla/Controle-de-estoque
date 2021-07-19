@@ -14,7 +14,7 @@
 Este é um projeto totalmente grátis!
 </blockquote>
 
-### Features
+### : 🏁 Features
 
 - [x] Cadastro de Usuário
 - [x] Cadastro de Produto
