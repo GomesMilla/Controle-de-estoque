@@ -14,6 +14,18 @@
 Este é um projeto totalmente grátis!
 </blockquote>
 
+### Features
+
+- [x] Cadastro de Usuário
+- [x] Cadastro de Produto
+- [x] Cadastro de Empresa
+- [x] Cadastro de Vendedor
+- [x] Listagem de Produtos
+- [x] Listagem de Empresa
+- [x] Listagem de Gerentes
+- [ ] Login
+- [ ] Acessando Informações Filtradas
+
 ### 🛠 Tecnologias
 <p>As seguintes ferramentas foram usadas na construção do projeto:</p>
 
@@ -22,5 +34,4 @@ Este é um projeto totalmente grátis!
 
 
 
-Observação: Foi utilizado a distro Linux Mint(versão 20.1), caso ocorra algum problema na instalação, pesquise por conta própria a resolução do mesmo!
       
