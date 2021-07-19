@@ -4,11 +4,10 @@
 	🚧  Status 🚀 Em reforma...  🚧
 </h4>
 
+<p align="center">Este repositório tem foco, na criação de uma aplicação de Controle de Estoque de um estabelecimento, interligado a um banco de dados provido pelo próprio Framework Django facilitando dessa forma a manipulação de seus dados.</p>
 
 
 
-Este repositório tem foco, na criação de uma aplicação de Controle de Estoque de um estabelecimento, interligado a um banco de dados provido pelo próprio 
-Framework Django facilitando dessa forma a manipulação de seus dados.
 
 
 Este projeto faz parte do meu portfólio pessoal, então, ficarei feliz caso você forneça algum feedback, código, estrutura, funcionalidade ou qualquer 

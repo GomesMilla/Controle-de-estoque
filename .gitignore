@@ -1,0 +1,4 @@
+.vscode
+migrations
+db.sqlite3
+env
