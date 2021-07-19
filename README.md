@@ -1,8 +1,11 @@
-# Controle-de-estoque
+<h1 align="center">Controle de Estoque</h1>
+<p align="center">Criar uma aplicação de Controle de Estoque onde a mesma tenha um design simples e belo, com intuito de promover o aprendizado utilizando o framework Django</p>
+<h4 align="center"> 
+	🚧  Status 🚀 Em reforma...  🚧
+</h4>
 
-A ideia é:
 
-"Criar uma aplicação de Controle de Estoque onde a mesma tenha um design simples e belo, com intuito de promover o aprendizado utilizando o framework Django"
+
 
 Este repositório tem foco, na criação de uma aplicação de Controle de Estoque de um estabelecimento, interligado a um banco de dados provido pelo próprio 
 Framework Django facilitando dessa forma a manipulação de seus dados.
