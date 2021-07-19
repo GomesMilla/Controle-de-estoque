@@ -14,9 +14,13 @@
 Este é um projeto totalmente grátis!
 </blockquote>
 
+### 🛠 Tecnologias
+<p>As seguintes ferramentas foram usadas na construção do projeto:</p>
+
+- [Django](https://www.djangoproject.com/start/)
+- [Bootstrap](https://getbootstrap.com/)
 
 
 
 Observação: Foi utilizado a distro Linux Mint(versão 20.1), caso ocorra algum problema na instalação, pesquise por conta própria a resolução do mesmo!
-Uma dedicatória a Lucas Santus que fez para mim o README! 
       
