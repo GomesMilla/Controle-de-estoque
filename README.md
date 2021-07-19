@@ -4,14 +4,15 @@
 	🚧  Status 🚀 Em reforma...  🚧
 </h4>
 
+<h1 align="center">
+  <img alt="Imagem de inicio" title="#ControleDeEstoque" src="static/Apresentação.png" />
+</h1>
 <p align="center">Este repositório tem foco, na criação de uma aplicação de Controle de Estoque de um estabelecimento, interligado a um banco de dados provido pelo próprio Framework Django facilitando dessa forma a manipulação de seus dados.</p>
+<p align="center" text-align: justify;>Este projeto faz parte do meu portfólio pessoal, então, ficarei feliz caso você forneça algum feedback, código, estrutura, funcionalidade ou qualquer 
+funcionalidade/melhoria que você possa relatar para melhora-lo.Você pode usar este projeto como quiser, seja para estudar, fazer melhorias, você quem manda!.</p>
 
 
 
-
-
-Este projeto faz parte do meu portfólio pessoal, então, ficarei feliz caso você forneça algum feedback, código, estrutura, funcionalidade ou qualquer 
-funcionalidade/melhoria que você possa relatar para melhora-lo.Você pode usar este projeto como quiser, seja para estudar, fazer melhorias, você que manda!
 Este é um projeto totalmente grátis!
 
 Observação: Foi utilizado a distro Linux Mint(versão 20.1), caso ocorra algum problema na instalação, pesquise por conta própria a resolução do mesmo!
